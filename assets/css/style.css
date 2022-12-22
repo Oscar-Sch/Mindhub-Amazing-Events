@@ -1,0 +1,19 @@
+*,*::after,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.logo{
+    width: 6rem;
+}
+.nav-buttons{
+    width: 60% !important;
+    flex-grow: 0 !important;
+}
+.nav-buttons_ul{
+    width: 100%;
+    justify-content: space-evenly;
+}
