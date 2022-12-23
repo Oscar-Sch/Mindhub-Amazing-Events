@@ -146,7 +146,7 @@ h1{
     padding: 0 !important;
     padding-top:2em !important ;
     /* width: 18rem; */
-    transition: all .5s;
+    transition: all .3s;
 }
 .card:hover{
     box-shadow: 5px 5px 15px black;
@@ -202,6 +202,11 @@ form{
     align-items: flex-end;
     gap: 1em;
     max-width: 20em;
+    background-color: #fff4;
+    padding: 2em;
+    border-radius: 1em;
+    border: 3px solid var(--violeta);
+    /* box-shadow: 3px 3px 10px black; */
 }
 form label{
     display: flex;
@@ -236,6 +241,7 @@ form>input:hover{
 }
 table{
     border-collapse: collapse;
+    background-color: #fff4;
 }
 .table-header th{
     padding: 1em 0;
