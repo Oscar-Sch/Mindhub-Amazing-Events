@@ -11,7 +11,7 @@
     --rosita:#eed4ff;
 }
 body{
-    background-color: var(--rosita);
+    background: linear-gradient(-30deg, #d7adf3, var(--rosita));
 }
 .logo-name{
     width: 6rem;
@@ -54,6 +54,19 @@ main{
     align-items: center;
     padding-bottom: 2em;
     min-height: 90vh;
+    position: relative;
+    overflow: hidden;
+}
+.background-logo{
+    height: 150%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    opacity: .2;
+    object-fit: contain;
+    object-position: center;
 }
 .title{
     width: 100%;
@@ -67,7 +80,7 @@ h1{
     color: white;
     font-family: 'Aclonica', sans-serif;
     text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
-             1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+             1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black, 5px 5px 10px black;
     filter: opacity(.7);
 }
 .logo{
@@ -292,5 +305,8 @@ footer span{
     }
     .btn-group *{
         padding: 0;
+    }
+    .card{
+        width: 23%;
     }
 }
