@@ -1,13 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 *,*::after,*::before{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: black;
+:root{
+    --magenta:#d90368;
+    --violeta:#7e6abe;
+    --lila:#b59df7;
+    --rosita:#eed4ff;
 }
-.logo{
+body{
+    background-color: var(--rosita);
+}
+.logo-name{
     width: 6rem;
+}
+.logo-name:hover{
+    box-shadow: none !important;
+    border: none !important;
+}
+nav{
+    border-bottom:2px solid var(--violeta);
 }
 .nav-buttons{
     width: 60% !important;
@@ -15,5 +29,268 @@ body{
 }
 .nav-buttons_ul{
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+    gap: 2em;
+}
+nav ul a{
+    background-color: var(--magenta);
+    border-radius: .5em;
+    font-family: 'Aclonica', sans-serif;
+    font-size: .8rem !important;
+    border: 2px solid black;
+    color: white !important;
+    font-weight: bolder !important;
+    box-shadow: 2px 2px 2px inset #fffa,-2px -2px 3px inset #a4034e;
+    /* text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
+             1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black; */
+}
+nav a:hover{
+    text-decoration: underline;
+    box-shadow: 2px 2px 2px inset #a4034e,-2px -2px 3px inset #fffa;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2em;
+    min-height: 90vh;
+}
+.title{
+    width: 100%;
+    text-align: center;
+    border-bottom:2px solid var(--violeta);
+    padding: 2em 0;
+    position: relative;
+}
+h1{
+    font-size: 3rem;
+    color: white;
+    font-family: 'Aclonica', sans-serif;
+    text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
+             1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+    filter: opacity(.7);
+}
+.logo{
+    width: 3.5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    
+}
+.filter-container{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 1em .5em;
+    gap: 1em;
+    width: 100%;
+}
+.btn-group{
+    gap: .5em;
+    
+}
+
+
+.filter-searchbar input{
+    border-radius: .5em;
+    padding-left: .3em;
+}
+.filter-searchbar input:focus{
+    outline:none;
+    border:2px solid var(--magenta);
+}
+.filter-searchbar button{
+    background-color: var(--lila);
+    color: white;
+    padding: .3em .5em;
+    border-radius: .5em;
+    border: 2px solid var(--violeta);
+}
+.filter-searchbar button:hover{
+    background-color: var(--violeta);
+}
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 1em;
+}
+.card{
+    border:2px solid var(--magenta);
+    align-items: center;
+    padding: 0 !important;
+    padding-top:2em !important ;
+    /* width: 18rem; */
+    transition: all .5s;
+}
+.card:hover{
+    box-shadow: 5px 5px 15px black;
+    scale: 1.05;
+}
+.card-img-top{
+    width: 90% !important;
+    /* box-shadow: -5px -5px 10px #0009; */
+    border-radius: .5em;
+    border: 3px solid var(--violeta);
+}
+.card-body{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: space-between;
+}
+.card_call{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.card_call p{
+    margin: 0;
+}
+.card_call span{
+    font-weight: bolder;
+}
+.btn-see-more{
+    background-color: var(--magenta);
+    color: white !important;
+    border: 1px solid black;
+}
+.btn-see-more:hover{
+    background-color: var(--rosita);
+    color: var(--magenta) !important;
+    border: 1px solid black;
+}
+form{
+    margin:2em 0;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1em;
+    max-width: 20em;
+}
+form label{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+form label input,textarea{
+    resize: none;
+    border-radius: .5em;
+}
+form label input:focus,textarea:focus{
+    outline: none;
+    border: 3px solid var(--magenta);
+}
+form label span{
+    font-weight: bolder;
+    font-family: 'Aclonica', sans-serif;
+}
+form>input{
+    background-color: var(--lila);
+    color: white;
+    font-weight: bolder;
+    padding: .3em .5em;
+    border-radius: .5em;
+}
+form>input:hover{
+    background-color: var(--violeta);
+}
+.table-container{
+    padding: 2em 0;
+    width: 100%;
+}
+table{
+    border-collapse: collapse;
+}
+.table-header th{
+    padding: 1em 0;
+    background-color: var(--lila);
+    padding-left: 1em;
+    color: white;
+    font-family: 'Aclonica', sans-serif;
+}
+.table-subheader th{
+    font-weight: 600;
+    border: 1px solid var(--violeta);
+}
+table td{
+    padding: 1em 0;
+    border: 1px solid var(--violeta);
+}
+.details-container{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid var(--magenta);
+    max-width: 50rem;
+    justify-content: center;
+    gap: 5%;
+    padding: 2em;
+}
+.details-img{
+    width: 90%;
+    max-width: 20rem;
+    height: 18rem;
+    border: 3px solid lime;
+}
+.details-info{
+    text-align: center;
+    width: 90%;
+    max-width: 20rem;
+}
+footer{
+    background-color: var(--magenta);
+    display: flex;
+    padding: 1em;
+    justify-content: space-between;
+    border-top: 5px solid var(--lila);
+    box-shadow: 0 -2px 10px black;
+}
+footer span{
+    color: white;
+    font-family: 'Aclonica', sans-serif;
+    font-size: 1.5em;
+}
+.social-media{
+    display: flex;
+    gap: 1em;
+}
+.insta,.wsp,.face{
+    width: 2em;
+    filter: drop-shadow(0px 0px 5px black);
+    transition: all .3s;
+}
+.insta:hover,.wsp:hover,.face:hover{
+    scale: 1.2;
+    filter: drop-shadow(5px 5px 7px black);
+}
+@media (max-width:993px){
+    nav ul a{
+        background-color: white;
+        border-radius: 1em;
+        box-shadow: none;
+        border: none;
+        color: var(--magenta) !important;
+        text-shadow: none;
+    }
+    nav a:hover{
+        box-shadow: none;
+    }
+    
+}
+@media (min-width:993px){
+    .filter-container{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .btn-group *{
+        padding: 0;
+    }
 }

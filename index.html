@@ -11,76 +11,227 @@
 </head>
 <body>
     <header>
-        <a>asdasdasd</a>
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid justify-content-between">
-            <a class="navbar-brand" href="./index.html">
-                <img src="./assets/img/Logo Amazing Events.png" alt="logo" class="logo">
-            </a>
-            
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-buttons_ul">
-                  <li class="nav-item">
-                    <a class="nav-item nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                  <li class="nav-item">
-                    <a class="nav-item nav-link active" aria-current="page" href="./upEvents.html">Upcoming Events</a>
-                </li>
-                  <li class="nav-item">
-                    <a class="nav-item nav-link active" aria-current="page" href="./pastEvents.html">Past Events</a>
-                </li>
-                  <li class="nav-item">
-                    <a class="nav-item nav-link active" aria-current="page" href="./contact.html">Contact</a>
-                </li>
-                  <li class="nav-item">
-                    <a class="nav-item nav-link active" aria-current="page" href="./stats.html">Stats</a>
-                </li>
-                  
-                </ul>
-              </div>
-
-
-              <!-- <div class="collapse navbar-collapse navbar-nav me-auto mb-2 mb-lg-0 justify-content-end" id="navbarSupportedContent">
-                <a class="nav-item nav-link active" aria-current="page" href="#">Home</a>
-                <a class="nav-item nav-link active" aria-current="page" href="./upEvents.html">Upcoming Events</a>
-                <a class="nav-item nav-link active" aria-current="page" href="./pastEvents.html">Past Events</a>
-                <a class="nav-item nav-link active" aria-current="page" href="./contact.html">Contact</a>
-                <a class="nav-item nav-link active" aria-current="page" href="./stats.html">Stats</a>
-              </div> -->
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./assets/img/Logo-Amazing-Events.png" alt="logo" class="logo-name">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-buttons_ul">
+                        <li class="nav-item">
+                            <a class="nav-item nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link active" aria-current="page" href="./upEvents.html">Upcoming Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link active" aria-current="page" href="./pastEvents.html">Past Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link active" aria-current="page" href="./contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link active" aria-current="page" href="./stats.html">Stats</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </nav>
+        </nav>
     </header>
-    
+    <main>
+        <div class="title">
+            <h1>Home</h1>
+            <img class="logo"src="./assets/img/logo.svg" alt="logo">
+        </div>
+        <div class="filter-container">
+            <div class="btn-group d-flex flex-wrap justify-content-evenly" role="group" aria-label="Basic checkbox toggle button group">
+                <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                <label class="btn btn-outline-danger checkboxSize" for="btncheck1">Food Fair</label>
+                <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                <label class="btn btn-outline-danger checkboxSize" for="btncheck2">Museum</label>
+                <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                <label class="btn btn-outline-danger checkboxSize" for="btncheck3">Costume Party</label>
+                <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+                <label class="btn btn-outline-danger checkboxSize" for="btncheck4">Music Concert</label>
+                <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
+                <label class="btn btn-outline-danger checkboxSize" for="btncheck5">Race</label>
+                <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
+                <label class="btn btn-outline-danger checkboxSize" for="btncheck6">Book Exchange</label>
+                <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off">
+                <label class="btn btn-outline-danger checkboxSize" for="btncheck7">Cinema</label>
+            </div>
+            <div class="filter-searchbar">
+                <input type="text" name="search" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </div>
+        <div class="cards-container row">
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/Fs03hQDt/Collectivities-Party.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Collectivities Party</h5>
+                    <p class="card-text">Enjoy your favourite dishes, from different countries, in a unique event for the whole family.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $5</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/ZmD3Xf57/Korean-style.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Korean style</h5>
+                    <p class="card-text">Enjoy the best Korean dishes, with international chefs and awesome events.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $10</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/GmHRkbNV/Jurassic-Park.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Jurassic Park</h5>
+                    <p class="card-text">Let's go meet the biggest dinosaurs in the paleontology museum.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $15</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/c4C2zXm8/Parisian-Museum.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Parisian Museum</h5>
+                    <p class="card-text">A unique tour in the city of lights, get to know one of the most iconic places.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $3500</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/KYD0jMf2/comicon.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Comicon</h5>
+                    <p class="card-text">For comic lovers, all your favourite characters gathered in one place.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $54</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/RZ9fH4Pr/halloween.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Halloween Night</h5>
+                    <p class="card-text">Come with your scariest costume and win incredible prizes.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $12</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/PrMJ0ZMc/Metallica-in-concert.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Metallica in concert</h5>
+                    <p class="card-text">The only concert of the most emblematic band in the world.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $150</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/KvsSK8cj/Electronic-Fest.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Electronic Fest</h5>
+                    <p class="card-text">The best national and international DJs gathered in one place.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $250</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article> 
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/fyLqZY9K/10-K-for-life.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">10K for life</h5>
+                    <p class="card-text">Come and exercise, improve your health and lifestyle.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $3</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/zv67r65z/15kny.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">15K NY</h5>
+                    <p class="card-text">We'll be raising funds for hospitals and medical care in this unique event held in The Big Apple.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $3</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/Sst763n6/book1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">School's book fair</h5>
+                    <p class="card-text">Bring your unused school book and take the one you need.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $1</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/05FhxHVK/book4.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Just for your kitchen</h5>
+                    <p class="card-text">If you're a gastronomy lover come get the cookbook that best suits your taste and your family's.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $100</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card col-10 col-md-5 col-lg-3"">
+                <img class="card-img-top" src="https://i.postimg.cc/vH52y81C/cinema4.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Batman</h5>
+                    <p class="card-text">Come see Batman fight crime in Gotham City.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $225</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card col-10 col-md-5 col-lg-3"">
+                <img class="card-img-top" src="https://i.postimg.cc/T3C92KTN/scale.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Avengers</h5>
+                    <p class="card-text">Marvel's Avengers Premier in 3d, the start of an epic saga with your favourite superheroes.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $250</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <div class="social-media">
+                <a href="#"><img class="insta" src="./assets/img/icon-igr.svg" alt="instagram logo"></a>
+                <a href="#"><img class="face" src="./assets/img/icon-fb.svg" alt="facebook logo"></a>
+                <a href="#"><img class="wsp" src="./assets/img/icon-wsp.svg" alt="whatsapp logo"></a>
+        </div>
+        <span>Cohort 41</span>
+    </footer>
 </body>
 </html>
-<!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Dropdown
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
-      </li>
-    </ul>
-    <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-  </div> -->

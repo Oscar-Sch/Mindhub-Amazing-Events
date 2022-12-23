@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid justify-content-between">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./assets/img/Logo-Amazing-Events.png" alt="logo" class="logo-name">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-buttons_ul">
+                        <li class="nav-item">
+                            <a class="nav-item nav-link active" aria-current="page" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link active" aria-current="page" href="./upEvents.html">Upcoming Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link active" aria-current="page" href="#">Past Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link active" aria-current="page" href="./contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link active" aria-current="page" href="./stats.html">Stats</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="title">
+            <h1>Past Events</h1>
+            <img class="logo"src="./assets/img/logo.svg" alt="logo">
+        </div>
+        <div class="filter-container">
+            <div class="btn-group d-flex flex-wrap justify-content-evenly" role="group" aria-label="Basic checkbox toggle button group">
+                <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                <label class="btn btn-outline-danger checkboxSize" for="btncheck1">Food Fair</label>
+                <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                <label class="btn btn-outline-danger checkboxSize" for="btncheck2">Museum</label>
+                <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                <label class="btn btn-outline-danger checkboxSize" for="btncheck3">Costume Party</label>
+                <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+                <label class="btn btn-outline-danger checkboxSize" for="btncheck4">Music Concert</label>
+                <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
+                <label class="btn btn-outline-danger checkboxSize" for="btncheck5">Race</label>
+                <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
+                <label class="btn btn-outline-danger checkboxSize" for="btncheck6">Book Exchange</label>
+                <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off">
+                <label class="btn btn-outline-danger checkboxSize" for="btncheck7">Cinema</label>
+            </div>
+            <div class="filter-searchbar">
+                <input type="text" name="search" placeholder="Search">
+                <button>Search</button>
+            </div>
+        </div>
+        <div class="cards-container row">
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/Fs03hQDt/Collectivities-Party.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Collectivities Party</h5>
+                    <p class="card-text">Enjoy your favourite dishes, from different countries, in a unique event for the whole family.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $5</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/GmHRkbNV/Jurassic-Park.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Jurassic Park</h5>
+                    <p class="card-text">Let's go meet the biggest dinosaurs in the paleontology museum.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $15</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/KYD0jMf2/comicon.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Comicon</h5>
+                    <p class="card-text">For comic lovers, all your favourite characters gathered in one place.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $54</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/KvsSK8cj/Electronic-Fest.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Electronic Fest</h5>
+                    <p class="card-text">The best national and international DJs gathered in one place.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $250</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article> 
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/fyLqZY9K/10-K-for-life.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">10K for life</h5>
+                    <p class="card-text">Come and exercise, improve your health and lifestyle.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $3</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card col-10 col-md-5 col-lg-3">
+                <img class="card-img-top" src="https://i.postimg.cc/05FhxHVK/book4.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Just for your kitchen</h5>
+                    <p class="card-text">If you're a gastronomy lover come get the cookbook that best suits your taste and your family's.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $100</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card col-10 col-md-5 col-lg-3"">
+                <img class="card-img-top" src="https://i.postimg.cc/vH52y81C/cinema4.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Batman</h5>
+                    <p class="card-text">Come see Batman fight crime in Gotham City.</p>
+                    <div class="card_call">
+                        <p><span>Price: </span> $225</p>
+                        <a href="#" class="btn btn-see-more">See more!</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <div class="social-media">
+                <a href="#"><img class="insta" src="./assets/img/icon-igr.svg" alt="instagram logo"></a>
+                <a href="#"><img class="face" src="./assets/img/icon-fb.svg" alt="facebook logo"></a>
+                <a href="#"><img class="wsp" src="./assets/img/icon-wsp.svg" alt="whatsapp logo"></a>
+        </div>
+        <span>Cohort 41</span>
+    </footer>
+</body>
+</html>
