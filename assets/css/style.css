@@ -112,6 +112,7 @@ h1{
 .filter-searchbar input{
     border-radius: .5em;
     padding-left: .3em;
+    width: 70%;
 }
 .filter-searchbar input:focus{
     outline:none;
@@ -147,6 +148,8 @@ h1{
     padding-top:2em !important ;
     /* width: 18rem; */
     transition: all .3s;
+    background-color: #fff8;
+    max-width: 25rem;
 }
 .card:hover{
     box-shadow: 5px 5px 15px black;
