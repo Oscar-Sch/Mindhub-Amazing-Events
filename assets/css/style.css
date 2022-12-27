@@ -333,6 +333,12 @@ footer span{
     scale: 1.2;
     filter: drop-shadow(5px 5px 7px black);
 }
+.hide{
+    display: none;
+}
+.show{
+    display: flex;
+}
 @media (max-width:993px){
     nav ul a{
         background-color: white;

@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="shortcut icon" href="./assets/img/logo.svg" type="image/x-icon">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <title>Amazing Events</title>
+    <script defer src="./assets/scripts/main.js"></script>
+    <title>Amazing Events | Past Events</title>
 </head>
 <body>
     <header class="sticky-top">
@@ -70,84 +71,7 @@
                 <button>Search</button>
             </div>
         </div>
-        <div class="cards-container row">
-            <article class="card col-10 col-md-5 col-lg-3">
-                <img class="card-img-top" src="https://i.postimg.cc/Fs03hQDt/Collectivities-Party.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Collectivities Party</h5>
-                    <p class="card-text">Enjoy your favourite dishes, from different countries, in a unique event for the whole family.</p>
-                    <div class="card_call">
-                        <p><span>Price: </span> $5</p>
-                        <a href="./details.html" class="btn btn-see-more">See more!</a>
-                    </div>
-                </div>
-            </article>
-            <article class="card col-10 col-md-5 col-lg-3">
-                <img class="card-img-top" src="https://i.postimg.cc/GmHRkbNV/Jurassic-Park.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Jurassic Park</h5>
-                    <p class="card-text">Let's go meet the biggest dinosaurs in the paleontology museum.</p>
-                    <div class="card_call">
-                        <p><span>Price: </span> $15</p>
-                        <a href="./details.html" class="btn btn-see-more">See more!</a>
-                    </div>
-                </div>
-            </article>
-            <article class="card col-10 col-md-5 col-lg-3">
-                <img class="card-img-top" src="https://i.postimg.cc/KYD0jMf2/comicon.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Comicon</h5>
-                    <p class="card-text">For comic lovers, all your favourite characters gathered in one place.</p>
-                    <div class="card_call">
-                        <p><span>Price: </span> $54</p>
-                        <a href="./details.html" class="btn btn-see-more">See more!</a>
-                    </div>
-                </div>
-            </article>
-            <article class="card col-10 col-md-5 col-lg-3">
-                <img class="card-img-top" src="https://i.postimg.cc/KvsSK8cj/Electronic-Fest.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Electronic Fest</h5>
-                    <p class="card-text">The best national and international DJs gathered in one place.</p>
-                    <div class="card_call">
-                        <p><span>Price: </span> $250</p>
-                        <a href="./details.html" class="btn btn-see-more">See more!</a>
-                    </div>
-                </div>
-            </article> 
-            <article class="card col-10 col-md-5 col-lg-3">
-                <img class="card-img-top" src="https://i.postimg.cc/fyLqZY9K/10-K-for-life.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">10K for life</h5>
-                    <p class="card-text">Come and exercise, improve your health and lifestyle.</p>
-                    <div class="card_call">
-                        <p><span>Price: </span> $3</p>
-                        <a href="./details.html" class="btn btn-see-more">See more!</a>
-                    </div>
-                </div>
-            </article>
-            <article class="card col-10 col-md-5 col-lg-3">
-                <img class="card-img-top" src="https://i.postimg.cc/05FhxHVK/book4.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Just for your kitchen</h5>
-                    <p class="card-text">If you're a gastronomy lover come get the cookbook that best suits your taste and your family's.</p>
-                    <div class="card_call">
-                        <p><span>Price: </span> $100</p>
-                        <a href="./details.html" class="btn btn-see-more">See more!</a>
-                    </div>
-                </div>
-            </article>
-            <article class="card col-10 col-md-5 col-lg-3">
-                <img class="card-img-top" src="https://i.postimg.cc/vH52y81C/cinema4.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Batman</h5>
-                    <p class="card-text">Come see Batman fight crime in Gotham City.</p>
-                    <div class="card_call">
-                        <p><span>Price: </span> $225</p>
-                        <a href="./details.html" class="btn btn-see-more">See more!</a>
-                    </div>
-                </div>
-            </article>
+        <div class="cards-container row" id="past-cards">
         </div>
     </main>
     <footer>
