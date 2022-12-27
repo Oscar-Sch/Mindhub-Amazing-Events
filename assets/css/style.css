@@ -43,7 +43,7 @@ nav ul a{
     box-shadow: 2px 2px 2px inset #fffa,-2px -2px 3px inset #a4034e;
     transition: all .3s !important;
 }
-nav a:hover{
+nav ul a:hover{
     text-decoration: underline;
     box-shadow: 2px 2px 2px inset #a4034e,-2px -2px 3px inset #fffa;
     background-color: #b10354 !important;
