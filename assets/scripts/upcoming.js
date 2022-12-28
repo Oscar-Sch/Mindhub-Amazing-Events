@@ -1,3 +1,5 @@
+//creo una funcion asincrona que se auto-instancia al comienzo de la ejecucion del script
+//para que traiga los datos desde el .json y mandarlos a la funcion RenderCards
 const LoadData=(async()=>{
     const cardsContainer= document.querySelector(".cards-container");
     let data;
@@ -10,22 +12,25 @@ const LoadData=(async()=>{
 })();
 
 
-
-function LoadCard(container,card){
+//recibe un container padre y los datos de un evento para insertar un 
+//template dinamico en el interior del contenedor
+function LoadCard(container,event){
     container.innerHTML+=
     `<article class="card col-10 col-md-5 col-lg-3">
-        <img class="card-img-top" src="${card.image}" alt="a ${card.name} image">
+        <img class="card-img-top" src="${event.image}" alt="a ${event.name} image">
         <div class="card-body">
-            <h5 class="card-title">${card.name}</h5>
-            <p class="card-text">${card.description}</p>
+            <h5 class="card-title">${event.name}</h5>
+            <p class="card-text">${event.description}</p>
             <div class="card_call">
-                <p><span>Price: </span> $${card.price}</p>
+                <p><span>Price: </span> $${event.price}</p>
                 <a href="./details.html" class="btn btn-see-more">See more!</a>
             </div>
         </div>
     </article>`
     ;
 }
+//recibe un contenedor padre y el objeto extraido del .json,
+//y por cada evento futuro manda a cargar una carta
 function RenderCards(container,data){
     data.events.forEach(card => {
         if (card.date>=data.currentDate){
