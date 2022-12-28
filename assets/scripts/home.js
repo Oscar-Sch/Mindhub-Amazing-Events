@@ -1,7 +1,3 @@
-//Este script quedo separado en tres por recomendación de los mentores
-//pero lo dejo por si en algun momento quiero tenerlos unidos nuevamente.
-
-
 const LoadData=(async()=>{
     const cardsContainer= document.querySelector(".cards-container");
     let data;
@@ -30,25 +26,9 @@ function LoadCard(container,card){
     </article>`
     ;
 }
-
 function RenderCards(container,data){
-    let title=document.querySelector("h1").innerText;
-    if (title==="Home"){
         data.events.forEach(card => {
             LoadCard(container,card);
         });
-    }else if(title==="Upcoming Events"){
-        data.events.forEach(card => {
-            if (card.date>=data.currentDate){
-                LoadCard(container,card);
-            }
-        });
-    }else if(title==="Past Events"){
-        data.events.forEach(card => {
-            if (card.date<data.currentDate){
-                LoadCard(container,card);
-            }
-        });
-    }
 }
 
