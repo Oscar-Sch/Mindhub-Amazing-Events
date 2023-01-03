@@ -4,6 +4,8 @@ const searchbar= document.querySelector(".filter-searchbar input");
 const searchBtn= document.querySelector(".filter-searchbar button");
 const checkBtns= document.querySelectorAll(".btn-check");
 const checkGroup= document.querySelector(".btn-group");
+// const seeMoreBtns= document.querySelectorAll(".btn-see-more");
+// const detailsModal= document.querySelectorAll(".details-modal");
 //creo una funcion asincrona que se auto-instancia al comienzo de la ejecucion del script
 //para que traiga los datos desde el .json y mandarlos a la funcion RenderCards
 const LoadData=(async(data,container)=>{ 
@@ -13,53 +15,51 @@ const LoadData=(async(data,container)=>{
             data.events=res.events;
             data.currentDate=res.currentDate;
         });
-        RenderCards(container,data.events)
+        RenderCards(container,data.events);
+        EventsObserver();
 })(data,cardsContainer);
 
 
-
-function ParseCategories(catStr){
-
-    return catStr.toLowerCase().split(",").map(cat=>cat.trim());
-
+//Encargada de cargar los event listeners
+function EventsObserver(){
+    searchbar.addEventListener("input",CrossFilter);
+    checkGroup.addEventListener("change", CrossFilter);
+    // seeMoreBtns.forEach(btn=>{
+    //     btn.addEventListener("click",()=>detailsModal.showModal)
+    // })
 }
 
-function ApplyFilter(cats,container,data){
-    let filtered=[];
-    filtered=data.filter(e=>{
-        for(let cat of cats){
-            if (e.category.toLowerCase()===cat){
-                return true;
-            }
-        }
-    });
-    if (filtered.length===0){
-        if(cats.length>1 || cats[0]!==""){
-            filtered=[]
-        }else{
-            filtered=data;
-        }
-    }
-    RenderCards(container,filtered);
+//Aplica los datos de ambos filtros para mostrar las tarjetas
+//correspondientes
+function CrossFilter(){
+    let firstFilter=SearchBarFilter(data.events,searchbar);
+    let secondFilter=CheckFilter(firstFilter,checkBtns);
+    
+    RenderCards(cardsContainer,secondFilter);
 }
 
-function FilterObserver(container,data){
-    const searchbar= document.querySelector(".filter-searchbar input");
-    const searchBtn= document.querySelector(".filter-searchbar button");
-    const checkBtns= document.querySelectorAll(".btn-check");
-    let searchCategories=[];
-    searchBtn.addEventListener("click",()=>{
-        searchCategories= ParseCategories(searchbar.value);
-        ApplyFilter(searchCategories,container,data);
-    });
-    checkBtns.forEach(btn=>{
-        btn.addEventListener("click",()=>{
-            
-        })
+//Usa los datos ingresados en la barra de busqueda para filtrar
+//por nombre
+function SearchBarFilter(data, input){
+    let filtered=data.filter(event=>event.name.toLowerCase().startsWith(input.value.toLowerCase()));
+    return filtered;
+}
+//Usa los nombres de los checkboxes para filtrar por categoria
+function CheckFilter(data,inputGroup){
+    let activeInputs=[];
+    let filtered;
+    inputGroup.forEach(input=>{
+        if(input.checked){
+            activeInputs.push(input.name.toLowerCase())
+        }
     })
+    if(activeInputs.length!==0){
+        filtered=data.filter(event=>activeInputs.includes(event.category.toLowerCase()));
+    }else{
+        filtered=data;
+    }
+    return filtered;
 }
-
-
 
 //recibe un container padre y los datos de un evento para insertar un 
 //template dinamico en el interior del contenedor
@@ -77,9 +77,9 @@ function LoadCard(event){
         </div>
     </article>`);
 }
-
+//Muestra un mensaje cuando no hay coincidencias
 function RenderError(container){
-    let errorMsg=`<h2 class="not-found">Unexistent categories</h2><h3 class="not-found">¡Remember to use commas to separate the categories!</h3>`;
+    let errorMsg=`<h2 class="not-found">Unexistent event!</h2><h3 class="not-found">Try again with another name or category!</h3>`;
     container.innerHTML=errorMsg;
 }
 
