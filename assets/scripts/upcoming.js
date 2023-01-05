@@ -1,8 +1,6 @@
 const data={};
 const cardsContainer= document.querySelector(".cards-container");
 const searchbar= document.querySelector(".filter-searchbar input");
-const searchBtn= document.querySelector(".filter-searchbar button");
-const checkBtns= document.querySelectorAll(".btn-check");
 const checkGroup= document.querySelector(".btn-group");
 //creo una funcion asincrona que se auto-instancia al comienzo de la ejecucion del script
 //para que traiga los datos desde el .json y mandarlos a la funcion RenderCards
@@ -14,12 +12,26 @@ const LoadData=(async(data,container)=>{
             data.currentDate=res.currentDate;
         });
         RenderCards(container,data.events);
-        FilterObserver();
+        RenderCheckboxes(ParseCategories(data.events),checkGroup);
+        EventsObserver();
 })(data,cardsContainer);
-
+function ParseCategories(data){
+    let categories= data.map(event=>event.category);
+    return Array.from(new Set(categories));
+}
+function RenderCheckboxes(categories,container){
+    let template="";
+    categories.forEach((cat,index)=>{
+        template+=`
+        <input type="checkbox" class="btn-check" id="btncheck${index}" name="${cat}">
+        <label class="btn btn-outline-danger checkboxSize" for="btncheck${index}">${cat}</label>
+        `;
+    });
+    container.innerHTML=template;
+}
 
 //Encargada de cargar los event listeners
-function FilterObserver(){
+function EventsObserver(){
     searchbar.addEventListener("input",CrossFilter);
     checkGroup.addEventListener("change", CrossFilter);
 }
@@ -27,6 +39,7 @@ function FilterObserver(){
 //Aplica los datos de ambos filtros para mostrar las tarjetas
 //correspondientes
 function CrossFilter(){
+    const checkBtns= document.querySelectorAll(".btn-check");
     let firstFilter=SearchBarFilter(data.events,searchbar);
     let secondFilter=CheckFilter(firstFilter,checkBtns);
     
@@ -67,14 +80,15 @@ function LoadCard(event){
             <p class="card-text">${event.description}</p>
             <div class="card_call">
                 <p><span>Price: </span> $${event.price}</p>
-                <a href="./details.html" class="btn btn-see-more">See more!</a>
+                <a class="btn btn-see-more" href="./details.html?id=${event._id}">See more!</a>
             </div>
         </div>
     </article>`);
 }
 //Muestra un mensaje cuando no hay coincidencias
 function RenderError(container){
-    let errorMsg=`<h2 class="not-found">Unexistent event!</h2><h3 class="not-found">Try again with another name or category!</h3>`;
+    let errorMsg=`<div class="not-found-container"><h2 class="not-found">Unexistent event!</h2><h3 class="not-found">Try again with another name or category!</h3>
+    </div>`;
     container.innerHTML=errorMsg;
 }
 
@@ -83,7 +97,7 @@ function RenderError(container){
 //y por cada evento manda a cargar una carta
 function RenderCards(container,data){
     let htmlStr=""; 
-    data.forEach(event => {
+    data.forEach(event=> {
         htmlStr+=LoadCard(event);
     });
     if(htmlStr){
@@ -92,3 +106,4 @@ function RenderCards(container,data){
         RenderError(container);
     }
 }
+
