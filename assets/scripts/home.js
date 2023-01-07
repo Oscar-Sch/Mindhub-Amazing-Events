@@ -6,7 +6,7 @@ const checkGroup= document.querySelector(".btn-group");
 //creo una funcion asincrona que se auto-instancia al comienzo de la ejecucion del script
 //para que traiga los datos desde el .json y mandarlos a la funcion RenderCards
 const LoadData=(async(data,container)=>{ 
-    await fetch("./assets/data/data.json", {method:"GET"})
+    await fetch("https://mindhub-xj03.onrender.com/api/amazing", {method:"GET"})
         .then(res=>res.json())
         .then(res=>{
             data.events=res.events;
@@ -60,7 +60,7 @@ function CheckFilter(data,inputGroup){
     let filtered;
     inputGroup.forEach(input=>{
         if(input.checked){
-            activeInputs.push(input.name.toLowerCase())
+            activeInputs.push(input.name.toLowerCase());
         }
     })
     if(activeInputs.length!==0){

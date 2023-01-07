@@ -263,12 +263,18 @@ table{
     font-family: 'Aclonica', sans-serif;
 }
 .table-subheader th{
-    font-weight: 600;
+    font-weight: bolder;
     border: 1px solid var(--violeta);
+    text-align: center;
+    width: 33.33%;
 }
 table td{
     padding: 1em 0;
     border: 1px solid var(--violeta);
+    text-align: center;
+}
+table td span{
+    font-weight: 600;
 }
 
 .details-container{

@@ -5,7 +5,7 @@ const container=document.querySelector(".details-container");
 
 const LoadData=(async(container,id)=>{ 
     let data;
-    await fetch("./assets/data/data.json", {method:"GET"})
+    await fetch("https://mindhub-xj03.onrender.com/api/amazing", {method:"GET"})
         .then(res=>res.json())
         .then(res=>{
             data=res.events;
