@@ -367,6 +367,31 @@ footer span{
     text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
              1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black, 5px 5px 10px black;
 }
+.loader-container{
+    display: flex;
+    justify-content: center;
+    height: 15em;
+    position: relative;
+}
+.loader-img{
+    animation: loader-img 1.5s infinite ease-in-out;
+}
+@keyframes loader-img {
+    50%{
+        scale: .7;
+    }
+    100%{
+        scale: 1;
+    }
+}
+.loader{
+    position: absolute;
+    width: 3em;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    filter: drop-shadow(0px 0px 10px black);
+}
 
 @media (max-width:991px){
     nav ul a{

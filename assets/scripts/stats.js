@@ -5,6 +5,7 @@ const tableContainer= document.querySelector(".table-container")
 
 const LoadData=(async(eventContainer,pastContainer,upContainer,tableContainer)=>{ 
     let data,dataPast=[],dataUp=[];
+    // RenderLoader(tableContainer)
     await fetch("https://mindhub-xj03.onrender.com/api/amazing", {method:"GET"})
         .then(res=>res.json())
         .then(res=>{
@@ -21,11 +22,11 @@ const LoadData=(async(eventContainer,pastContainer,upContainer,tableContainer)=>
             RenderTable(upContainer,dataUp,CalculateCatStats);
         })
         .catch(err=>{
-            RenderError(tableContainer);
+            RenderLoadError(tableContainer);
         })
 })(eventsTable,pastEventsTable,upEventsTable,tableContainer);
 
-function RenderError(container){
+function RenderLoadError(container){
     let errorMsg=`<div class="not-found-container"><h2 class="not-found">Can't load the data!</h2><h3 class="not-found">Please try again later <3</h3>
     </div>`;
     container.innerHTML=errorMsg;

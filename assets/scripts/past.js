@@ -5,16 +5,34 @@ const checkGroup= document.querySelector(".btn-group");
 //creo una funcion asincrona que se auto-instancia al comienzo de la ejecucion del script
 //para que traiga los datos desde el .json y mandarlos a la funcion RenderCards
 const LoadData=(async(data,container)=>{ 
+    RenderLoader(container);
     await fetch("https://mindhub-xj03.onrender.com/api/amazing", {method:"GET"})
         .then(res=>res.json())
         .then(res=>{
             data.events=res.events.filter(event=>event.date<res.currentDate);
             data.currentDate=res.currentDate;
-        });
-        RenderCards(container,data.events);
-        RenderCheckboxes(ParseCategories(data.events),checkGroup);
-        EventsObserver();
+            RenderCards(container,data.events);
+            RenderCheckboxes(ParseCategories(data.events),checkGroup);
+            EventsObserver();
+        })
+        .catch(err=>{
+            RenderLoadError(container);
+        })
 })(data,cardsContainer);
+
+function RenderLoader(container){
+    let loader=`
+    <div class="loader-container">
+        <img class="loader-img"src="./assets/img/logo.svg" alt="loader"/>
+        <img class="loader"src="./assets/img/loader.gif" alt="loader"/>    
+    </div>`;
+    container.innerHTML=loader;
+}
+function RenderLoadError(container){
+    let errorMsg=`<div class="not-found-container"><h2 class="not-found">Can't load the data!</h2><h3 class="not-found">Please try again later <3</h3>
+    </div>`;
+    container.innerHTML=errorMsg;
+}
 
 
 function ParseCategories(data){
