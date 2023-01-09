@@ -56,22 +56,33 @@ function GetMaxCap(data){
 function CalculateEventStats(data){
     return [[GetMax(data),GetMin(data),GetMaxCap(data)]]
 }
+
+function ParseCategories(data){
+    let categories= data.map(event=>event.category);
+    return Array.from(new Set(categories));
+}
+
 function CalculateCatStats(data){
-    return (data.map(elem=>{
-        return [
-            elem.category,
-            `$${elem.assistance?
-                elem.assistance*elem.price:
-                elem.estimate*elem.price}`,
-            `%${(elem.assistance?
-                elem.assistance*100/elem.capacity:
-                elem.estimate*100/elem.capacity).toFixed(2)}`
-        ]
-    }));
+    let categories=ParseCategories(data);
+    return categories.map(cat=>{
+        let catInfo= data.filter(event=>event.category===cat);
+        return catInfo.reduce((acu,elem,index)=>{
+            if(!index){
+                acu[0]=elem.category;
+            }
+            acu[1]+= (elem.assistance ?? elem.estimate)*elem.price;
+            acu[2]+= (elem.assistance ?? elem.estimate)/elem.capacity*100;
+            if (index===catInfo.length-1){
+                acu[1]= "$"+acu[1];
+                acu[2]= "%"+ (acu[2]/catInfo.length).toFixed(2);
+            }
+            return acu;
+        },["category",0,0])
+    });
 }
 function LoadTable(stats){
     return stats.map(stat=>{
-        console.log(stat)
+        // console.log(stat)
         return(
         `<tr>
             ${stat.map(elem=>{
