@@ -5,6 +5,7 @@ const container=document.querySelector(".details-container");
 
 const LoadData=(async(container,id)=>{ 
     let data;
+    RenderLoader(container);
     await fetch("https://mindhub-xj03.onrender.com/api/amazing", {method:"GET"})
         .then(res=>res.json())
         .then(res=>{
@@ -12,6 +13,16 @@ const LoadData=(async(container,id)=>{
         });
         RenderDetails(container,data,id);
 })(container,id);
+
+function RenderLoader(container){
+    let loader=`
+    <div class="loader-container">
+        <img class="loader-img"src="./assets/img/logo.svg" alt="loader"/>
+        <img class="loader"src="./assets/img/loader.gif" alt="loader"/>    
+    </div>`;
+    container.innerHTML=loader;
+}
+
 
 function LoadTemplate(event){
     return `
